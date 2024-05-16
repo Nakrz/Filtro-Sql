@@ -4237,3 +4237,19 @@ la película con id_pelicula = 2.
 +-----------------------------+
 ```
 
+
+
+
+
+# UNION DE TABLA HUERFANA
+
+
+
+```sql
+ALTER TABLE pelicula
+ADD COLUMN film_id SMALLINT NOT NULL;
+
+ALTER TABLE pelicula
+ADD COLUMN CONSTRAINT fk_film_pel FOREIGN KEY (film_id) REFERENCES film_text(film_id);
+```
+
